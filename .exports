@@ -35,3 +35,6 @@ export GPG_TTY=$(tty);
 
 # Homebrew directory
 export PATH="/usr/local/bin:$PATH"
+
+# Yarn Global
+export PATH="$(yarn global bin):$PATH"
