@@ -158,7 +158,7 @@ ZSH_THEME="tommasongr"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git osx zsh-autosuggestions zsh-syntax-highlighting autoupdate extract node npm brew colored-man-pages)
 
-source ~/dotfiles/zsh/plugins/fixls.zsh
+source ~/dotfiles/zsh/extras/fixls.zsh
 source ~/Library/Preferences/org.dystroy.broot/launcher/bash/br
 source $ZSH/oh-my-zsh.sh
 
