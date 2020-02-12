@@ -78,14 +78,14 @@ check_for_software tmux
 echo
 
 echo "Creating zsh cache folder"
-mkdir ~/.zsh-cache
+mkdir ~/.cache/zsh
 echo
 echo "Copying extras/* into their locations"
-cp ~/dotfiles/extras/oh-my-zsh ~/.oh-my-zsh
-cp ~/dotfiles/extras/autoupdate ~/.oh-my-zsh/custom/plugins/autoupdate
-cp ~/dotfiles/extras/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-cp ~/dotfiles/extras/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-cp ~/dotfiles/extras/tommasongr.zsh-theme ~/.oh-my-zsh/custom/themes/tommasongr.zsh-theme
+cp -r ~/dotfiles/zsh/extras/oh-my-zsh ~/.oh-my-zsh
+cp -r ~/dotfiles/zsh/extras/autoupdate ~/.oh-my-zsh/custom/plugins/autoupdate/
+cp -r ~/dotfiles/zsh/extras/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/
+cp -r ~/dotfiles/zsh/extras/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/
+cp ~/dotfiles/zsh/extras/tommasongr.zsh-theme ~/.oh-my-zsh/custom/themes/tommasongr.zsh-theme
 
 check_default_shell
 
