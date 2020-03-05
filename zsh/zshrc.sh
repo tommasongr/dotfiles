@@ -6,8 +6,6 @@ export ZSH_CACHE_FOLDER="$HOME/.cache/zsh"
 HISTFILE=$ZSH_CACHE_FOLDER/.zsh_history
 SAVEHIST=1000
 
-fpath=($HOME/dotfiles/zsh/extras/completitions $fpath)
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -71,7 +69,7 @@ ZSH_THEME="tommasongr"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=~/dotfiles/zsh/extras/custom/
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
