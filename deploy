@@ -77,15 +77,10 @@ echo
 check_for_software tmux
 echo
 
+rm -rf ~/.cache/zsh
 echo "Creating zsh cache folder"
 mkdir ~/.cache/zsh
-echo
-echo "Copying extras/* into their locations"
-cp -r ~/dotfiles/zsh/extras/oh-my-zsh ~/.oh-my-zsh
-cp -r ~/dotfiles/zsh/extras/autoupdate ~/.oh-my-zsh/custom/plugins/autoupdate/
-cp -r ~/dotfiles/zsh/extras/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/
-cp -r ~/dotfiles/zsh/extras/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/
-cp ~/dotfiles/zsh/extras/tommasongr.zsh-theme ~/.oh-my-zsh/custom/themes/tommasongr.zsh-theme
+rm -rf ~/.zsh_history
 
 check_default_shell
 
@@ -96,16 +91,21 @@ stty raw -echo
 answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
 stty $old_stty_cfg
 if echo "$answer" | grep -iq "^y" ;then
-	mv ~/.zshrc ~/.zshrc.old
+	mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc.old
+    rm ~/.zshrc.pre-oh-my-zsh
 	mv ~/.tmux.conf ~/.tmux.conf.old
 	mv ~/.vimrc ~/.vimrc.old
 else
 	echo -e "\nNot backing up old dotfiles."
+    rm ~/.zshrc.pre-oh-my-zsh
 fi
 
 printf "source '$HOME/dotfiles/zsh/zshrc_manager.sh'" > ~/.zshrc
 printf "so $HOME/dotfiles/vim/vimrc.vim" > ~/.vimrc
 printf "source-file $HOME/dotfiles/tmux/tmux.conf" > ~/.tmux.conf
 
+echo "Installing Vim Plugins"
+vim +PluginInstall +qall
+
 echo
-echo "Please log out and log back in for default shell to be initialized."
+echo "Please make sure to quit the terminal for applying the changes."

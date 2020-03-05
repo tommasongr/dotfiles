@@ -1,0 +1,12 @@
+echo "Installing Vundle"
+rm -rf ~/.vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+echo
+echo "Importing sources..."
+ln -s ~/dotfiles/vim/vpm ~/.vim/vpm
+
+echo
+echo "Installing Oh My Zsh"
+rm -rf ~/.oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
