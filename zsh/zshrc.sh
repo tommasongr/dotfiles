@@ -69,7 +69,7 @@ ZSH_HIGHLIGHT_STYLES[assign]=none
 
 # Plugin Config - AUTOUPDATES
 
-export UPDATE_ZSH_DAYS=1
+export UPDATE_ZSH_DAYS=7
 
 ########## ALIASES ##########
 
